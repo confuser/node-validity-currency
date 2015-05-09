@@ -1,0 +1,46 @@
+{
+  "name": "validity-currency",
+  "version": "1.0.0",
+  "description": "Validity style validator which validates a float with currency symbols",
+  "main": "validator.js",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "scripts": {
+    "lint": "jshint .",
+    "checkStyle": "jscs .",
+    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:confuser/node-validity-currency"
+  },
+  "keywords": [
+    "validity",
+    "validation",
+    "currency",
+    "symbols"
+  ],
+  "author": "James Mortemore <jamesmortemore@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/confuser/node-validity-currency/issues"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "0.3.5",
+    "jscs": "1",
+    "jshint": "2",
+    "jshint-full-path": "0",
+    "mocha": "2"
+  },
+  "dependencies": {
+    "currency-symbol-map": "^2.0.2"
+  }
+}

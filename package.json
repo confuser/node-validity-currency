@@ -1,6 +1,6 @@
 {
   "name": "validity-currency",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Validity style validator which validates a float with currency symbols",
   "main": "validator.js",
   "directories": {

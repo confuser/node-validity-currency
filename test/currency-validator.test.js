@@ -18,4 +18,17 @@ describe('Currency Validator', function() {
     assert.equal(currencyValidator('£100,000.00'), true)
   })
 
+  it('should return matches', function () {
+    assert.equal(currencyValidator.match('£100')[0], '£100')
+    assert.equal(currencyValidator.match('£100.00')[0], '£100.00')
+    assert.equal(currencyValidator.match('this is £100.00')[0], '£100.00')
+  })
+
+  it('should remove currencies', function () {
+    assert.equal(currencyValidator.replace('£100', ''), '')
+    assert.equal(currencyValidator.replace('£100.00', 'hello'), 'hello')
+    assert.equal(currencyValidator.replace('this is £100.00', ''), 'this is ')
+    assert.equal(currencyValidator.replace('Nothing to see here', ''), 'Nothing to see here')
+  })
+
 })

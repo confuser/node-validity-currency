@@ -1,4 +1,4 @@
-# validity-required-options
+# validity-currency
 
 [![build status](https://secure.travis-ci.org/confuser/node-validity-currency.png)](http://travis-ci.org/confuser/node-validity-currency)
 [![Coverage Status](https://coveralls.io/repos/confuser/node-validity-currency/badge.png?branch=master)](https://coveralls.io/r/confuser/node-validity-currency?branch=master)
